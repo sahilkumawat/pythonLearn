@@ -93,3 +93,33 @@ sahilAcct.withdraw(700)
 
 print(sahilAcct.balance())
 
+
+# Write a Python class to find a pair of elements (indices of the two numbers)
+# from a given array whose sum equals a specific target number
+class ElementsPair:
+    target = 0
+    list1 = []
+    elements = tuple(())
+
+    def __init__(self, target, list1):
+        self.target = target
+        self.list1 = list1
+
+    def findPairs(self):
+        for x in self.list1:
+            for y in self.list1:
+                if x == y:
+                    continue
+                elif x + y == self.target:
+                    self.elements = x,y
+                    break
+
+        return self.list1.index(self.elements[0]), self.list1.index(self.elements[1])
+
+
+
+x = ElementsPair(9, [2,3,4,5])
+print(x.findPairs())
+
+
+
