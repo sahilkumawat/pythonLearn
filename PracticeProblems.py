@@ -67,4 +67,29 @@ while palindrome < n:
             print(palindrome)
 
     palindrome += 2
+    
+class BankAccount:
+
+    acct_balance = 0
+
+    def __init__(self, balance):
+        self.acct_balance = balance
+
+    def balance(self):
+        return self.acct_balance
+
+    def withdraw(self, amount):
+        if self.acct_balance > amount:
+            self.acct_balance -= amount
+        else:
+            print("Balance is too low")
+
+    def deposit(self, amount):
+        self.acct_balance += amount
+
+sahilAcct = BankAccount(500)
+sahilAcct.deposit(100)
+sahilAcct.withdraw(700)
+
+print(sahilAcct.balance())
 
